@@ -1,0 +1,1097 @@
+@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap);
+.panel {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    height: 400px;
+    padding: 40px;
+    width: 40%
+}
+
+.divider {
+    background: linear-gradient(180deg, #0000001e 0, #000 40%, #000 0, #000 60%, #000000a2 0, #0000001e);
+    height: 300px;
+    margin: "0 40px";
+    width: 2px
+}
+
+.PanelComponents {
+    justify-content: space-around
+}
+
+.PanelComponents,
+.stats {
+    align-items: center;
+    display: flex;
+    flex-direction: column
+}
+
+.stats {
+    align-content: center;
+    background-color: hsla(0, 0%, 100%, .37);
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: 2px;
+    border-color: #fff;
+    border-radius: 32px;
+    border-style: ridge;
+    bottom: 0;
+    box-shadow: inset;
+    height: auto;
+    justify-content: center;
+    left: 0;
+    margin-bottom: 10px;
+    margin-left: 50px;
+    margin-top: 10px;
+    position: "relatve";
+    right: 0;
+    top: 0;
+    width: 300px
+}
+
+.images {
+    padding: 10px;
+    width: 20%
+}
+
+.arrowopen {
+    -webkit-transform: rotate(0deg), ;
+    transform: rotate(0deg),
+}
+
+.arrowclosed {
+    -webkit-transform: rotate(90deg), ;
+    transform: rotate(90deg),
+}
+
+.open {
+    -webkit-transform: translateX(0);
+    transform: translateX(0)
+}
+
+.closed {
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%)
+}
+
+.closeComponent {
+    visibility: collapse
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: #111;
+    color: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    margin: 0;
+    min-height: 100vh
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, Courier New, monospace
+}
+
+.slidingPuzzle {
+    display: grid;
+    place-items: center
+}
+
+h1 {
+    margin: 0
+}
+
+.board {
+    padding: 0;
+    position: relative
+}
+
+.tile {
+    background: #ec6f66;
+    display: grid;
+    list-style: none;
+    place-items: center;
+    position: absolute
+}
+
+.button,
+.tile {
+    font-size: 20px
+}
+
+.button {
+    background-color: #002df7;
+    border-radius: 5px;
+    color: #fff;
+    display: block;
+    padding: 20px
+}
+
+h1 {
+    margin-bottom: 1em;
+    text-align: center
+}
+
+.App {
+    display: flex;
+    height: auto;
+    width: auto
+}
+
+.App,
+.cardsBG {
+    gap: 1em;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr)
+}
+
+.cardsBG {
+    grid-gap: 1em;
+    display: grid;
+    height: 60%;
+    width: 100%
+}
+
+.card {
+    align-items: center;
+    -webkit-animation: hideCard 2s linear;
+    animation: hideCard 2s linear;
+    background-color: #fff;
+    border-radius: 5px;
+    display: flex;
+    height: 100px;
+    justify-content: center;
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    transition: -webkit-transform .5s;
+    transition: transform .5s;
+    transition: transform .5s, -webkit-transform .5s;
+    width: 100px
+}
+
+@-webkit-keyframes hideCard {
+    0%,
+    70% {
+        -webkit-transform: rotateY(0);
+        transform: rotateY(0)
+    }
+    to {
+        -webkit-transform: rotateY(180deg);
+        transform: rotateY(180deg)
+    }
+}
+
+@keyframes hideCard {
+    0%,
+    70% {
+        -webkit-transform: rotateY(0);
+        transform: rotateY(0)
+    }
+    to {
+        -webkit-transform: rotateY(180deg);
+        transform: rotateY(180deg)
+    }
+}
+
+.card-img {
+    -webkit-animation: hideImage 2s linear;
+    animation: hideImage 2s linear;
+    max-height: 80%;
+    max-width: 80%;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    transition: -webkit-transform .5s;
+    transition: transform .5s;
+    transition: transform .5s, -webkit-transform .5s
+}
+
+@-webkit-keyframes hideImage {
+    0%,
+    70% {
+        -webkit-transform: scale(1);
+        transform: scale(1)
+    }
+    to {
+        -webkit-transform: scale(0);
+        transform: scale(0)
+    }
+}
+
+@keyframes hideImage {
+    0%,
+    70% {
+        -webkit-transform: scale(1);
+        transform: scale(1)
+    }
+    to {
+        -webkit-transform: scale(0);
+        transform: scale(0)
+    }
+}
+
+.card.active {
+    -webkit-transform: rotateY(0);
+    transform: rotateY(0)
+}
+
+.card.correct {
+    background-color: #65e469
+}
+
+.card.wrong {
+    background-color: #fd245a
+}
+
+.card.active img {
+    -webkit-transform: scale(1);
+    transform: scale(1)
+}
+
+.tile {
+    height: 100px;
+    width: 100px
+}
+
+.Game {
+    flex-direction: column;
+    height: 70%;
+    padding: 20px;
+    width: 100%
+}
+
+.Game,
+.action-container {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    justify-content: center
+}
+
+.action-container {
+    flex-wrap: wrap
+}
+
+.main-title {
+    margin-bottom: 10px;
+    text-decoration: underline
+}
+
+.show-game-detail-container-button {
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px 20px;
+    position: absolute;
+    right: 0;
+    top: 0
+}
+
+.show-game-detail-container-button button {
+    background-color: initial;
+    border: none;
+    cursor: pointer;
+    font-size: 25px
+}
+
+.Grid {
+    display: flex;
+    flex-direction: column;
+    padding: 30px
+}
+
+tr {
+    border: 1px solid #141c3a
+}
+
+table {
+    border: 3px solid #141c3a;
+    border-collapse: collapse;
+    margin: 0 auto
+}
+
+td {
+    background-color: hsla(0, 0%, 100%, .733);
+    border: 1px solid #141c3a;
+    border-radius: 5px;
+    font-weight: 700;
+    height: 30px;
+    text-align: center;
+    -webkit-user-select: none;
+    user-select: none;
+    width: 30px
+}
+
+.right-border {
+    border-right: 3px solid #141c3a
+}
+
+.bottom-border {
+    border-bottom: 3px solid #141c3a
+}
+
+.cell-modifiable {
+    color: blue;
+    cursor: pointer
+}
+
+.cell-invalid {
+    background-color: #ff000054
+}
+
+.cell-hinted {
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-name: hintAnimation;
+    animation-name: hintAnimation;
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+    color: orange
+}
+
+@-webkit-keyframes hintAnimation {
+    0% {
+        background-color: orange
+    }
+    to {
+        background-color: initial
+    }
+}
+
+@keyframes hintAnimation {
+    0% {
+        background-color: orange
+    }
+    to {
+        background-color: initial
+    }
+}
+
+.choice-container {
+    display: flex;
+    flex: 1 1;
+    justify-content: space-around
+}
+
+.choice {
+    background-color: #f0f8ff;
+    border: 2px solid;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 900;
+    margin: 5px;
+    padding: 5px 15px
+}
+
+.selected {
+    background-color: #0010a5
+}
+
+.selected-eraser {
+    background: #add8e6
+}
+
+.selected p {
+    color: #fff
+}
+
+.noSelect {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none
+}
+
+.noSelect:focus {
+    outline: none !important
+}
+
+:root {
+    --primary: #4628ff;
+    --warning: #ffd028;
+    --danger: #eb3f27;
+    --success: #75fa83;
+    --white: #fdfdfd;
+    --dark: #181717
+}
+
+.btn {
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: Roboto, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 10px 20px;
+    transition: -webkit-transform .3s ease;
+    transition: transform .3s ease;
+    transition: transform .3s ease, -webkit-transform .3s ease
+}
+
+.btn:hover {
+    -webkit-transform: translateY(-3px);
+    transform: translateY(-3px)
+}
+
+.btn--primary--solid {
+    background-color: #4628ff;
+    background-color: var(--primary)
+}
+
+.btn--primary--solid,
+.btn--warning--solid {
+    border: none;
+    color: #fdfdfd;
+    color: var(--white)
+}
+
+.btn--warning--solid {
+    background-color: #ffd028;
+    background-color: var(--warning)
+}
+
+.btn--danger--solid {
+    background-color: #eb3f27;
+    background-color: var(--danger)
+}
+
+.btn--danger--solid,
+.btn--success--solid {
+    border: none;
+    color: #fdfdfd;
+    color: var(--white)
+}
+
+.btn--success--solid {
+    background-color: #75fa83;
+    background-color: var(--success)
+}
+
+.btn--primary--outline {
+    background-color: initial;
+    border-color: #4628ff;
+    border-color: var(--primary)
+}
+
+.btn--warning--outline {
+    background-color: initial;
+    border-color: #ffd028;
+    border-color: var(--warning)
+}
+
+.btn--danger--outline {
+    background-color: initial;
+    border-color: #eb3f27;
+    border-color: var(--danger)
+}
+
+.btn--success--outline {
+    background-color: initial;
+    border-color: #75fa83;
+    border-color: var(--success)
+}
+
+.InformationModal {
+    align-items: center;
+    background-color: #c8c8c8;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    position: fixed;
+    width: 100vw
+}
+
+.modal-container {
+    height: 500px
+}
+
+.modal-container .modal-body {
+    flex: 50% 1;
+    margin-bottom: 12px;
+    text-align: justify
+}
+
+.modal-container .modal-body .links {
+    align-items: center;
+    display: flex;
+    font-size: 1.7rem;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+    text-align: center
+}
+
+.modal-container .modal-footer {
+    flex: 20% 1
+}
+
+.GameDetails,
+.NoSolutionFoundModal {
+    align-items: center;
+    background-color: hsla(0, 0%, 78%, .8);
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    position: fixed;
+    width: 100vw;
+    z-index: 1000
+}
+
+.modal-container .modal-body {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-size: 23px;
+    justify-content: center;
+    margin: 30px 0;
+    text-align: center
+}
+
+.animation-container {
+    height: 30vh;
+    width: auto
+}
+
+.DifficultySelectionModal {
+    align-items: center;
+    background-color: hsla(0, 0%, 78%, .3);
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    position: fixed;
+    width: 100vw;
+    z-index: 1000
+}
+
+.modal-container {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .35);
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    margin: 10px;
+    padding: 25px;
+    width: 500px
+}
+
+.modal-container .modal-title {
+    display: inline-block;
+    margin-top: 10px;
+    text-align: center
+}
+
+.modal-close-btn-container {
+    display: flex;
+    justify-content: flex-end
+}
+
+.modal-close-btn-container button {
+    background-color: initial;
+    border: none;
+    cursor: pointer;
+    font-size: 25px
+}
+
+.modal-container .difficulty-modal-body {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-size: 23px;
+    justify-content: center;
+    margin: 30px 0;
+    text-align: center;
+    visibility: hidden
+}
+
+.modal-container .modal-footer {
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px
+}
+
+.difficulty-selection-container {
+    cursor: pointer;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around
+}
+
+.difficulty {
+    align-content: center;
+    border-radius: 30px;
+    border-style: solid;
+    border-width: 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 30px 0;
+    max-width: 30%
+}
+
+.easy {
+    border-color: #90ee90
+}
+
+.medium {
+    border-color: orange
+}
+
+.hard {
+    border-color: red
+}
+
+.animation-container-difficulty {
+    height: 50%
+}
+
+@media (max-width:870px) {
+    .difficulty {
+        margin: 10px 0;
+        max-width: 40%;
+        padding: 5px
+    }
+}
+
+.slidesBackground {
+    align-items: center;
+    background-blend-mode: .2;
+    background-image: url(https://wallpapercave.com/wp/wp4372833.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    justify-content: center;
+    opacity: .3;
+    position: "relative";
+    width: 100%
+}
+
+.startGameNow {
+    background-blend-mode: darken;
+    background-image: url(/static/media/timemachine.2aa4be30921a32733801.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-color: #fff;
+    border-radius: 30px;
+    border-width: 2px;
+    height: 90%;
+    left: 5%;
+    position: absolute;
+    top: 5%;
+    width: 90%
+}
+
+.screenBG {
+    left: 10%;
+    position: absolute;
+    top: 10%;
+    width: auto
+}
+
+.screen,
+.screenBG {
+    align-items: center;
+    height: auto
+}
+
+.screen {
+    align-content: center;
+    background-color: hsla(0, 0%, 100%, .37);
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: 2px;
+    border-color: #fff;
+    border-radius: 32px;
+    border-style: ridge;
+    bottom: 0;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    left: 0;
+    margin: 10px;
+    padding: 50px;
+    position: "relatve";
+    right: 0;
+    top: 0;
+    width: 80%
+}
+
+.title {
+    color: #000;
+    font-size: 47px;
+    letter-spacing: 4.7px;
+    line-height: 100%
+}
+
+.imageStyle {
+    height: auto;
+    max-height: 200px;
+    width: auto
+}
+
+.info {
+    color: #000;
+    font-size: 20px;
+    letter-spacing: 2px;
+    line-height: 100%;
+    text-align: center
+}
+
+.submit {
+    background: linear-gradient(110deg, rgba(23, 0, 164, .7), rgba(36, 0, 255, .75));
+    border-radius: 20px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, .25);
+    padding: 20px 40px
+}
+
+.backGround {
+    background-blend-mode: .2;
+    background-image: url(https://wallpapercave.com/wp/wp4372833.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    opacity: .3;
+    position: "relative";
+    width: 100%
+}
+
+.startButton {
+    align-items: center;
+    background-color: #fff;
+    border: 2px;
+    border-color: #fff;
+    border-radius: 30px;
+    box-shadow: 5px;
+    color: #000;
+    font-size: 20px;
+    font-weight: 700;
+    height: auto;
+    left: 40%;
+    padding: 30px 50px;
+    position: absolute;
+    top: 45%;
+    width: auto
+}
+
+.startGame {
+    background-image: url(/static/media/timetravel2.0a2fc6cf9da533e88a6e.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-color: #fff;
+    border-radius: 30px;
+    border-width: 2px;
+    height: 70%;
+    left: 30%;
+    position: absolute;
+    top: 15%;
+    width: 40%
+}
+
+.authBackground {
+    background-image: url(/static/media/timetravel7.6c90c29791d62901fcac.gif);
+    background-size: cover;
+    color: #000;
+    height: 100vh;
+    justify-content: center;
+    padding-bottom: 20px;
+    padding-top: 30px
+}
+
+.authBackground,
+.authcenterbar {
+    align-items: center;
+    background-repeat: no-repeat;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    left: 0;
+    position: "relative";
+    right: 0;
+    top: 0
+}
+
+.authcenterbar {
+    align-content: center;
+    background-color: hsla(0, 0%, 100%, .37);
+    background-size: contain;
+    border: 2px;
+    border-color: #fff;
+    border-radius: 32px;
+    border-style: ridge;
+    height: auto;
+    justify-content: space-between;
+    padding: 50px;
+    width: 85%
+}
+
+.inputBox {
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 10px 30px;
+    padding: 20px;
+    width: 100%
+}
+
+.inputBG {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%
+}
+
+.authButton {
+    align-items: center;
+    align-self: center;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 20px 40px;
+    width: 40%
+}
+
+.background {
+    height: 100vh;
+    justify-content: start
+}
+
+.adminTopBar {
+    align-content: center;
+    align-items: center;
+    background-color: hsla(0, 0%, 100%, .37);
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: 2px;
+    border-color: #fff;
+    border-radius: 32px;
+    border-style: ridge;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    left: 0;
+    margin: 10px;
+    padding: 1.5%;
+    position: "relative";
+    right: 0;
+    top: 0;
+    width: 90%
+}
+
+.centerbar {
+    width: 90%
+}
+
+.centerbarComponents {
+    background-color: hsla(0, 0%, 100%, .37);
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: 2px;
+    border-color: #fff;
+    border-radius: 32px;
+    border-style: ridge;
+    height: 10px;
+    justify-content: start
+}
+
+.stageBoard {
+    margin-left: 10px;
+    position: "relatve"
+}
+
+.background {
+    background-image: url(/static/media/timetravel7.6c90c29791d62901fcac.gif);
+    background-size: cover;
+    color: #000;
+    flex-direction: column;
+    height: auto;
+    justify-content: center;
+    padding-bottom: 20px;
+    padding-top: 30px
+}
+
+.background,
+.topbar {
+    align-items: center;
+    background-repeat: no-repeat;
+    bottom: 0;
+    display: flex;
+    left: 0;
+    position: "relative";
+    right: 0;
+    top: 0
+}
+
+.topbar {
+    align-content: center;
+    background-color: hsla(0, 0%, 100%, .37);
+    background-size: contain;
+    border: 2px;
+    border-color: #fff;
+    border-radius: 32px;
+    border-style: ridge;
+    flex-direction: row;
+    height: 100px;
+    justify-content: space-between;
+    margin: 10px;
+    padding: 1.5%;
+    width: 90%
+}
+
+.profile {
+    align-items: center;
+    display: inline-flex
+}
+
+.scoreboard {
+    align-content: center;
+    background-color: hsla(0, 0%, 100%, .37);
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: 2px;
+    border-color: #fff;
+    border-radius: 32px;
+    border-style: ridge;
+    bottom: 0;
+    box-shadow: inset;
+    flex-direction: row;
+    height: 100px;
+    justify-content: center;
+    left: 0;
+    margin-left: 10px;
+    position: "relatve";
+    right: 0;
+    top: 0;
+    width: 300px
+}
+
+.scoreboard,
+.topbarMenu {
+    align-items: center;
+    display: flex
+}
+
+.topbarMenu {
+    flex-direction: "row";
+    justify-content: "space-between";
+    width: 100%
+}
+
+.centerbar {
+    align-content: center;
+    align-items: center;
+    background-color: hsla(0, 0%, 100%, .37);
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: 2px;
+    border-color: #fff;
+    border-radius: 32px;
+    border-style: ridge;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    justify-content: space-between;
+    left: 0;
+    margin: 10px;
+    padding: 50px;
+    position: "relative";
+    right: 0;
+    top: 0;
+    width: 85%
+}
+
+.centerbarComponents,
+.heading {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row
+}
+
+.centerbarComponents {
+    bottom: 0;
+    height: auto;
+    justify-content: space-evenly;
+    left: 0;
+    margin: 10px;
+    padding: 50px;
+    position: "relative";
+    right: 0;
+    top: 0;
+    width: 85%
+}
+
+.stageBoard {
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+    margin: 10px;
+    width: 60%
+}
+
+.gameDetailsBG,
+.stageBoard {
+    align-content: center;
+    align-items: center;
+    background-color: hsla(0, 0%, 100%, .37);
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: 2px;
+    border-color: #fff;
+    border-radius: 32px;
+    border-style: ridge;
+    bottom: 0;
+    box-shadow: inset;
+    justify-content: center;
+    left: 0;
+    position: "relative";
+    right: 0;
+    top: 0
+}
+
+.gameDetailsBG {
+    grid-gap: 1em;
+    display: grid;
+    gap: 1em;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    height: auto;
+    margin-left: 10px;
+    width: 80%
+}
+
+.gameDetails {
+    align-content: center;
+    background-color: hsla(0, 0%, 100%, .37);
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: 2px;
+    border-color: #fff;
+    border-radius: 32px;
+    border-style: ridge;
+    box-shadow: inset;
+    height: auto;
+    margin: 10px;
+    width: 80%
+}
+
+.chronoSphereBG,
+.gameDetails {
+    align-items: center;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    left: 0;
+    position: "relative";
+    right: 0;
+    top: 0
+}
+
+.chronoSphereBG {
+    color: #000;
+    height: 100vh;
+    width: 100%
+}
+
+/*# sourceMappingURL=main.9f312db9.css.map*/

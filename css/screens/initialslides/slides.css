@@ -1,0 +1,90 @@
+.slidesBackground {
+    position: 'relative';
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: 0.2;
+    background-image: url("https://wallpapercave.com/wp/wp4372833.jpg");
+    opacity: 0.3;
+}
+
+.startGameNow {
+    top: 5%;
+    left: 5%;
+    position: absolute;
+    border-radius: 30px;
+    border-color: white;
+    border-width: 2px;
+    width: 90%;
+    height: 90%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: darken;
+    background-image: url("../../assets/images/development/timemachine.png");
+}
+
+.screenBG {
+    position: absolute;
+    width: auto;
+    height: auto;
+    align-items: center;
+    top: 10%;
+    left: 10%;
+}
+
+.screen {
+    color: black;
+    height: auto;
+    margin: 10px;
+    width: 80%;
+    position: 'relatve';
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    padding: 50px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: rgba(255, 255, 255, 0.37);
+    border: 2px;
+    border-color: white;
+    border-style: ridge;
+    border-radius: 32px;
+}
+
+.title {
+    font-size: 47px;
+    letter-spacing: 4.70px;
+    line-height: 100%;
+    color: black;
+}
+
+.imageStyle {
+    height: auto;
+    width: auto;
+    max-height: 200px;
+}
+
+.info {
+    font-size: 20px;
+    letter-spacing: 2px;
+    line-height: 100%;
+    text-align: center;
+    color: black;
+}
+
+.submit {
+    padding: 20px 40px;
+    border-radius: 20px;
+    background: linear-gradient(110deg, rgba(22.91, 0, 163.62, 0.70), rgba(35.93, 0.27, 255, 0.75));
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}

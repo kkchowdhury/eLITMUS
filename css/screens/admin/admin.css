@@ -1,0 +1,158 @@
+.background {
+    position: 'relative';
+    justify-content: start;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    color: black;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("../../assets/images/timetravel7.gif")
+}
+
+.adminTopBar {
+    margin: 10px;
+    width: 90%;
+    position: 'relative';
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    display: flex;
+    align-content: center;
+    padding: 1.5%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: rgba(255, 255, 255, 0.37);
+    border: 2px;
+    border-color: white;
+    border-style: ridge;
+    border-radius: 32px;
+}
+
+.profile {
+    display: inline-flex;
+    align-items: center;
+}
+
+.scoreboard {
+    height: 100px;
+    width: 300px;
+    margin-left: 10px;
+    position: 'relatve';
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: rgba(255, 255, 255, 0.37);
+    border: 2px;
+    border-color: white;
+    border-style: ridge;
+    border-radius: 32px;
+    box-shadow: inset;
+}
+
+.topbarMenu {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: 'row';
+    justify-content: 'space-between';
+}
+
+.centerbar {
+    height: auto;
+    width: 90%;
+    position: 'relative';
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: rgba(255, 255, 255, 0.37);
+    border: 2px;
+    border-color: white;
+    border-style: ridge;
+    border-radius: 32px;
+}
+
+.heading {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+}
+
+.centerbarComponents {
+    height: 10px;
+    width: 85%;
+    position: 'relative';
+    justify-content: start;
+    flex-direction: row;
+    align-items: center;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: rgba(255, 255, 255, 0.37);
+    border: 2px;
+    border-color: white;
+    border-style: ridge;
+    border-radius: 32px;
+}
+
+.stageBoard {
+    height: 100px;
+    width: 60%;
+    margin-left: 10px;
+    position: 'relatve';
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: rgba(255, 255, 255, 0.37);
+    border: 2px;
+    border-color: white;
+    border-style: ridge;
+    border-radius: 32px;
+    box-shadow: inset;
+}
